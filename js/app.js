@@ -23,6 +23,8 @@ search.addEventListener('click', function (e) {
     e.preventDefault();
     getFoodName();
 });
+
+// this event is for showing food ingredients
 foodRow.addEventListener('click', function (e) {
     if (!(this === e.target)) {
         const mealID = e.target.parentElement.id;
@@ -48,6 +50,8 @@ foodRow.addEventListener('click', function (e) {
             });
     }
 });
+
+// this event is close food ingredients section
 document.querySelector('.cross').addEventListener('click', function (e) {
     foodIngredients.style.display = 'none';
     foodIngredients.style.visibility = 'hidden';
