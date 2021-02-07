@@ -1,18 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hungry Monster</title>
+    <!-- Font Awesome Icons CDN Link-->
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
     <!-- Bootstrap File -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <!-- Custom CSS File -->
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
 
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <!-- Navigation Bar -->
+            <nav class="navbar navbar-expand-md">
+                <a href="#" class="navbar-brand">Hungry Food</a>
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a href="#" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">About</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">Recipes</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">Blog</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Food Items Section -->
+    <section id="foodItems">
+        <div class="container">
+            <!-- Search Bar -->
+            <div class="row justify-content-center">
+                <div class="col-6">
+                    <form action="">
+                        <div class="input-group">
+                            <span class="input-group-text searchIcon"><i class="fas fa-search"></i></span>
+                            <input class="form-control form-control-lg foodName" type="text"
+                                placeholder="Search For Meal">
+                            <button class="btn btn-danger searchButton">Search</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <!-- Food Items -->
+            <div id="foods" class="row mt-5 g-5"></div>
+        </div>
+    </section>
+
+    <!-- Food Ingredients Details -->
+    <section id="foodIngredients">
+        <div class="container">
+            <p class="cross">&times;</p>
+            <div class="row justify-content-center">
+                <div class="col-5">
+                    <img class="ingredientsImg img-thumbnail" src="" alt="">
+                    <h3 class="ingredientsName mt-3">Sea Food</h3>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-5">
+                    <p>Ingredients</p>
+                    <ul id="ingredientsDetails">
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bootstrap JS File -->
+    <script src="js/bootstrap.bundle.min.js"></script>
     <!-- Custom JS File -->
     <script src="js/app.js"></script>
 </body>
+
 </html>
