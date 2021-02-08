@@ -6,6 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hungry Monster</title>
+    <!-- Google Fonts CDN Link -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet">
     <!-- Font Awesome Icons CDN Link-->
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
         integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
@@ -20,30 +23,39 @@
     <header>
         <div class="container">
             <!-- Navigation Bar -->
-            <nav class="navbar navbar-expand-md">
-                <a href="#" class="navbar-brand">Hungry Food</a>
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a href="#" class="nav-link">Home</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link">About</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link">Recipes</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link">Blog</a></li>
-                </ul>
+            <nav class="navbar navbar-expand-md navbar-light">
+                <!-- Logo -->
+                <a href="#" class="navbar-brand">
+                    <img src="images/logo.jpg" alt="logo">
+                </a>
+                <!-- Menu Button -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div id="navMenu" class="collapse navbar-collapse">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a href="#" class="nav-link">Home</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link">About</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link">Recipes</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link">Blog</a></li>
+                    </ul>
+                </div>
             </nav>
         </div>
     </header>
 
     <!-- Food Items Section -->
     <section id="foodItems">
-        <div class="container">
+        <div class="container wrapper">
             <!-- Search Bar -->
             <div class="row justify-content-center">
-                <div class="col-6">
+                <div class="col-7">
                     <form action="">
                         <div class="input-group">
                             <span class="input-group-text searchIcon"><i class="fas fa-search"></i></span>
-                            <input class="form-control form-control-lg foodName" type="text"
+                            <input class="form-control foodName" type="text"
                                 placeholder="Search For Meal">
-                            <button class="btn btn-danger searchButton">Search</button>
+                            <button class="btn btn-primary searchButton">Search</button>
                         </div>
                     </form>
                 </div>
@@ -55,25 +67,36 @@
 
     <!-- Food Ingredients Details -->
     <section id="foodIngredients">
-        <div class="container">
-            <p class="cross">&times;</p>
+        <div class="container wrapper">
+            <p class="ingredientsClose">&times;</p>
             <div class="row justify-content-center">
-                <div class="col-5">
-                    <img class="ingredientsImg img-thumbnail" src="" alt="">
-                    <h3 class="ingredientsName mt-3">Sea Food</h3>
+                <div class="col-3">
+                    <img class="ingredientsImg img-fluid" src="" alt="">
+                    <h3 class="ingredientsName mt-3 text-center"></h3>
                 </div>
             </div>
             <div class="row justify-content-center">
                 <div class="col-5">
-                    <p>Ingredients</p>
-                    <ul id="ingredientsDetails">
+                    <p class="lead text-center">Ingredients</p>
+                    <ul id="ingredientsDetails" class="list-group">
 
                     </ul>
                 </div>
             </div>
         </div>
     </section>
-
+    <!-- Item Not Found Alert -->
+    <section id="notFoundAlert">
+        <div class="container">
+            <h4 class="notFoundClose">&times;</h4>
+            <div class="row">
+                <div class="col">
+                    <img class="img-fluid" width="100px" src="images/notFound.jpg" alt="not found img">
+                    <h3 class="alertMessage my-5" class="my-5"></h3>
+                </div>
+            </div>
+        </div>
+    </section>
     <!-- Bootstrap JS File -->
     <script src="js/bootstrap.bundle.min.js"></script>
     <!-- Custom JS File -->

@@ -37,9 +37,9 @@ foodRow.addEventListener('click', function (e) {
                     data.meals[0].strMeal;
                 for (let i = 1; i <= 20; i++) {
                     let ingredients = data.meals[0][`strIngredient${i}`];
-                    console.log(ingredients);
-                    if (ingredients !== '') {
-                        ingredientsDetails.innerHTML += `<li><i class="fas fa-check-square"></i> ${
+                    console.log(typeof ingredients);
+                    if (ingredients !== '' && JSON.stringify(ingredients) !== 'null') {
+                        ingredientsDetails.innerHTML += `<li class="list-group-item"><i class="fas fa-check-square text-primary me-2"></i> ${
                             data.meals[0][`strIngredient${i}`]
                         }</li>`;
                     }
@@ -52,13 +52,18 @@ foodRow.addEventListener('click', function (e) {
 });
 
 // this event is close food ingredients section
-document.querySelector('.cross').addEventListener('click', function (e) {
+document.querySelector('.ingredientsClose').addEventListener('click', function (e) {
     foodIngredients.style.display = 'none';
     foodIngredients.style.visibility = 'hidden';
     foodItems.style.display = 'block';
     [...ingredientsDetails.children].forEach(child => child.remove());
 
 });
+
+// this event close not found alert
+document.querySelector('.notFoundClose').addEventListener('click', function (e) {
+    document.querySelector('#notFoundAlert').style.transform = 'translate(-50%, -100%)';
+})
 /* -------------> All Functions <------------- */
 // create HTML elements with attribute
 function createElements(tagName, attr, value) {
@@ -69,11 +74,11 @@ function createElements(tagName, attr, value) {
 
 // create card column
 function itemColumn() {
-    foodRow.innerHTML += `<div class="col-3">
+    foodRow.innerHTML += `<div class="col-12 col-md-6 col-lg-3">
         <div class="card items">
             <img class="card-img-top">
             <div class="card-body">
-                <h4 class="card-title"></h4>
+                <h4 class="card-title mt-3"></h4>
             </div>
         </div>
     </div>`;
@@ -85,14 +90,15 @@ function getMeals(URL, foodName) {
         .then((res) => res.json())
         .then((data) => {
             if (JSON.stringify(data.meals) === 'null') {
-                alert(`${foodName} is not found`);
+                document.querySelector('.alertMessage').innerText =`${foodName} Item Not Found`
+                document.querySelector('#notFoundAlert').style.transform = 'translate(-50%, 0%)';
             } else showMeals(data);
         });
 }
 function showMeals(data) {
     for (let i = 0; i < data.meals.length; i++) {
         itemColumn();
-        document.querySelectorAll('img')[i].src = data.meals[i].strMealThumb;
+        document.querySelectorAll('#foods img')[i].src = data.meals[i].strMealThumb;
         document.querySelectorAll('h4')[i].innerText = data.meals[i].strMeal;
         document.querySelectorAll('.card')[i].id = data.meals[i].idMeal;
     }

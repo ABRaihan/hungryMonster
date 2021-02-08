@@ -1,67 +1,146 @@
-*{
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family: 'Josefin Sans', sans-serif;
 }
-:root{
+body {
+    background: url('../images/bg.png') no-repeat;
+    background-size: cover;
+}
+
+:root {
     --sectionPadding: 30px 0;
 }
 /* Header Section */
-header{
+header {
     padding: var(--sectionPadding);
 }
-
+header nav {
+    padding: 0 30px !important;
+    background-color: rgba(253, 253, 253, 0.26);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 15px;
+}
+header nav .navbar-brand img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+header nav ul li a {
+    color: black !important;
+    font-size: 20px;
+}
 /* Food Items Section */
-#foodItems{
+#foodItems {
     padding: var(--sectionPadding);
+    position: relative;
 }
-#foodItems .searchIcon{
-    background-color: transparent;
+.wrapper {
+    padding: 30px;
+    background-color: rgba(253, 253, 253, 0.26);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 15px;
+}
+#foodItems .searchIcon {
+    background-color: #0b68f7;
     border-right: none;
+    color: white;
+    border: none;
+    border-radius: 10px 0 0 10px;
 }
-#foodItems .searchIcon + input{
-    border-left: none;
+#foodItems .searchIcon + input {
+    border: none;
+    background-color: rgba(255, 255, 255, 0);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
 }
-#foodItems .searchIcon + input:focus{
+#foodItems .searchIcon + input:focus {
     outline: none;
     box-shadow: none;
-    border-color:#ced4da ;
+    border: none;
+    color: black;
 }
-#foodItems .items{
-    background-color: rgb(231, 224, 210);
+#foodItems .searchIcon + input::placeholder {
+    color: black;
+    font-size: 16px;
+}
+#foodItems .items {
+    background-color: rgba(255, 255, 255, 0.5);
     border-radius: 10px;
     text-align: center;
     overflow: hidden;
     cursor: pointer;
+    border: none;
+    padding: 20px 20px;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
 }
-#foodItems img{
-    background-color: white;
+#foodItems .items img{
+    border-radius: 10px;
 }
-
+#foodItems .searchButton {
+    border: none;
+    backdrop-filter: blur(20px);
+    border-radius: 0px 10px 10px 0;
+}
 /* Food Ingredients Section */
-#foodIngredients{
+#foodIngredients {
     display: none;
     visibility: hidden;
     position: absolute;
     top: 0;
     width: 100%;
     min-height: 100%;
-    background-color: rgb(175, 174, 174);
+    background: url(../images/bg.png) no-repeat;
+    background-size: cover;
     z-index: 111;
     display: flex;
     justify-content: center;
     padding-top: 100px;
-    transition: .5s;
-
+    transition: 0.5s;
 }
-#foodIngredients .cross{
-    font-size: 40px;
-    position: absolute;
+#foodIngredients .ingredientsClose {
+    font-size: 50px;
+    position: fixed;
     right: 40px;
     top: 10px;
     cursor: pointer;
-
+}
+#foodIngredients img{
+    border-radius: 15px;
 }
 #foodIngredients #ingredientsDetails{
-    list-style: none;
+    border-radius: 15px;
+}
+#foodIngredients #ingredientsDetails li {
+    background-color: rgba(255, 255, 255, 0.178);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+}
+
+/* Not Found Alert */
+#notFoundAlert{
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -100%);
+    background-color: rgba(255, 255, 255, 0.178);
+    width: 500px;
+    text-align: center;
+    padding: 20px 0;
+    border-radius: 15px;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    transition: .5s;
+}
+#notFoundAlert .notFoundClose{
+    font-size: 50px;
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    cursor: pointer;
 }
