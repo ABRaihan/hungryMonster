@@ -7,6 +7,7 @@
 body {
     background: url('../images/bg.png') no-repeat;
     background-size: cover;
+    min-height: 100vh;
 }
 
 :root {
@@ -53,9 +54,7 @@ header nav ul li a {
 }
 #foodItems .searchIcon + input {
     border: none;
-    background-color: rgba(255, 255, 255, 0);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
+    background-color: rgba(255, 255, 255);
 }
 #foodItems .searchIcon + input:focus {
     outline: none;
@@ -67,25 +66,24 @@ header nav ul li a {
     color: black;
     font-size: 16px;
 }
+
+#foodItems .searchButton {
+    border: none;
+}
+
 #foodItems .items {
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: rgba(255, 255, 255, 0.7);
     border-radius: 10px;
     text-align: center;
     overflow: hidden;
     cursor: pointer;
     border: none;
     padding: 20px 20px;
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
 }
-#foodItems .items img{
+#foodItems .items img {
     border-radius: 10px;
 }
-#foodItems .searchButton {
-    border: none;
-    backdrop-filter: blur(20px);
-    border-radius: 0px 10px 10px 0;
-}
+
 /* Food Ingredients Section */
 #foodIngredients {
     display: none;
@@ -109,20 +107,18 @@ header nav ul li a {
     top: 10px;
     cursor: pointer;
 }
-#foodIngredients img{
+#foodIngredients img {
     border-radius: 15px;
 }
-#foodIngredients #ingredientsDetails{
+#foodIngredients #ingredientsDetails {
     border-radius: 15px;
 }
 #foodIngredients #ingredientsDetails li {
-    background-color: rgba(255, 255, 255, 0.178);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
+    background-color: rgba(255, 255, 255, 0.7);
 }
 
 /* Not Found Alert */
-#notFoundAlert{
+#notFoundAlert {
     position: absolute;
     top: 0;
     left: 50%;
@@ -134,9 +130,9 @@ header nav ul li a {
     border-radius: 15px;
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-    transition: .5s;
+    transition: 0.5s;
 }
-#notFoundAlert .notFoundClose{
+#notFoundAlert .notFoundClose {
     font-size: 50px;
     position: fixed;
     bottom: 0;
