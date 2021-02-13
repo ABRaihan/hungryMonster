@@ -30,11 +30,13 @@ search.addEventListener('click', function (event) {
 
 // this event is for showing food ingredients
 foodRow.addEventListener('click', async function (event) {
+    loader(true);
     const col = document.querySelectorAll('#foods .col-12');
     if (!(this === event.target || [...col].find(element => event.target === element))) {
         const mealID = event.target.parentElement.id;
         const foodDetails = await getData(mealDetailsByIdURL, mealID);
         showIngredients(foodDetails);
+        loader(false);
     }
 });
 
@@ -90,8 +92,17 @@ function notFoundAlert(foodName) {
     document.querySelector('#notFoundAlert').style.transform =
         'translate(-50%, 0%)';
 }
+// Loader
+function loader(isShow) {
+    if (isShow) {
+        document.querySelector('#loader').style.display = 'block';
+    } else {
+        document.querySelector('#loader').style.display = 'none';
+    }
+}
 // getting food name form input box and call getData() function
 async function showFoods() {
+    loader(true);
     const foodName = document.querySelector('.foodName');
     [...foodRow.children].forEach((child) => child.remove());
     if (foodName.value) {
@@ -108,6 +119,7 @@ async function showFoods() {
         }
     }
     foodName.value = '';
+    loader(false);
 }
 
 // this function will show food ingredients

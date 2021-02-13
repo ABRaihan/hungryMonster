@@ -33,12 +33,20 @@ header nav ul li a {
     color: black !important;
     font-size: 20px;
 }
+/* Loader */
+#loader{
+    position: fixed;
+    top: 155px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: none;
+}
 /* Food Items Section */
 #foodItems {
     padding: var(--sectionPadding);
-    position: relative;
 }
 .wrapper {
+    position: relative;
     padding: 30px;
     background-color: rgba(253, 253, 253, 0.26);
     backdrop-filter: blur(20px);
@@ -70,7 +78,6 @@ header nav ul li a {
 #foodItems .searchButton {
     border: none;
 }
-
 #foodItems .items {
     background-color: rgba(255, 255, 255, 0.7);
     border-radius: 10px;
@@ -83,7 +90,6 @@ header nav ul li a {
 #foodItems .items img {
     border-radius: 10px;
 }
-
 /* Food Ingredients Section */
 #foodIngredients {
     display: none;
@@ -94,7 +100,7 @@ header nav ul li a {
     min-height: 100%;
     background: url(../images/bg.png) no-repeat;
     background-size: cover;
-    z-index: 111;
+    z-index: 1;
     display: flex;
     justify-content: center;
     padding-top: 100px;
